@@ -1,0 +1,17 @@
+Performing C++ SOURCE FILE Test _flag_supported failed with the following output:
+Change Dir: /home/tom/fetch_lukitu/xmllukitu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_25ca6/fast && /usr/bin/make  -f CMakeFiles/cmTC_25ca6.dir/build.make CMakeFiles/cmTC_25ca6.dir/build
+make[1]: Entering directory '/home/tom/fetch_lukitu/xmllukitu/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_25ca6.dir/src.cxx.o
+/usr/bin/c++ -D_flag_supported  -pthread    /W4 -o CMakeFiles/cmTC_25ca6.dir/src.cxx.o -c /home/tom/fetch_lukitu/xmllukitu/CMakeFiles/CMakeTmp/src.cxx
+c++: error: /W4: No such file or directory
+CMakeFiles/cmTC_25ca6.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_25ca6.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_25ca6.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/tom/fetch_lukitu/xmllukitu/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_25ca6/fast' failed
+make: *** [cmTC_25ca6/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }

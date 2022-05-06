@@ -1,0 +1,6 @@
+find_package(CURL REQUIRED)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+add_subdirectory(thirdparty)
+add_library(xmllukitu STATIC src/remotejsontoxml.cpp)
+target_include_directories(xmllukitu PUBLIC src util)
+target_link_libraries(xmllukitu ${CURL_LIBRARIES} json11 tinyxml2 pthread)
