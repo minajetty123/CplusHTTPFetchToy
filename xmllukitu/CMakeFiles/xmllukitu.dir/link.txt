@@ -1,2 +1,0 @@
-/usr/bin/ar qc libxmllukitu.a CMakeFiles/xmllukitu.dir/src/remotejsontoxml.o
-/usr/bin/ranlib libxmllukitu.a
