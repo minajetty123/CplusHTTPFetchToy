@@ -9,3 +9,6 @@ Go to root folder of the project
 camke .
 make
 ```
+Then run the executable (library as .a static linked with it)
+## OS
+* Ubuntu and other compatible linux system
