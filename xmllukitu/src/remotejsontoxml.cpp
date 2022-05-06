@@ -56,6 +56,7 @@ void RemoteJsonToXML::StartFetchAndConvert(const string &target_url, const strin
       }else{
           printf("save XML file failed: %i\n", eResult);
       }
+      xmlDoc.Clear(); /* clean up all XMLElement in heap */
     }
 }
 
