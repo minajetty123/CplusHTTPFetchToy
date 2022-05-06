@@ -38,13 +38,17 @@ void RemoteJsonToXML::StartFetchAndConvert(const string &target_url, const strin
       string err;
       auto json = json11::Json::parse(readBuffer, err).array_items();
       for(const auto& value: json) {
-          //std::cout << value.object_items().at("body").dump() << "\n";
-          XMLElement * pElement = xmlDoc.NewElement("");
-          pElement->SetAttribute("id", value.object_items().at("id").dump().c_str());
-          pElement->SetAttribute("body", value.object_items().at("body").dump().c_str());
-          pElement->SetAttribute("userId", value.object_items().at("userId").dump().c_str());
-          pElement->SetAttribute("title", value.object_items().at("title").dump().c_str());
-          pRoot->InsertEndChild(pElement);
+          std::map<std::string, json11::Json>::const_iterator it = value.object_items().begin();
+          while (it !=  value.object_items().end())
+          {
+             auto jsonKey = it->first;
+             auto jsonValue = it->second;
+             std::cout <<"json row: "<< jsonKey << " :: " << jsonValue.dump() << std::endl;
+             XMLElement * pElement = xmlDoc.NewElement("");
+             pElement->SetAttribute(jsonKey.c_str(), jsonValue.dump().c_str());
+             pRoot->InsertEndChild(pElement);
+             it++;
+          }
       }
       XMLError eResult = xmlDoc.SaveFile(target_path.c_str());
       if (eResult == XML_SUCCESS){
